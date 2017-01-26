@@ -12,7 +12,4 @@ Nostalgia, I guess ¯\\\_(ツ)_/¯
 
 ## How
 
-1. Clone repo
-1. Go to chrome://extensions
-1. Check "Developer mode"
-1. Click "Load unpacked extension..." and open the repo folder
+[![](https://developer.chrome.com/webstore/images/ChromeWebStore_Badge_v2_206x58.png)](https://chrome.google.com/webstore/detail/chromescape-navigator/ocjjknbofcggmblgmlpfpmhccojaecnp)
