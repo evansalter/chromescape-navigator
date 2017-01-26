@@ -40,7 +40,6 @@ function generateTabKey(windowId, tabId) {
 }
 
 function updateTabStatus(windowId, tabId, status) {
-    console.log("New tab status: " + status);
     var tabKey = generateTabKey(windowId, tabId);
     tabStatuses[tabKey] = status;
 }
@@ -51,7 +50,6 @@ function getTabStatus(windowId, tabId) {
 }
 
 function updateAppStatus(status) {
-    console.log("Current status: " + currentStatus + "\nNew status: " + status);
     switch (status) {
         case LOADING_STATUS:
             startLoading();
@@ -66,7 +64,6 @@ function updateAppStatus(status) {
 
 function startLoading() {
     currentStatus = LOADING_STATUS;
-    console.log("interval: " + interval);
     if (!interval) {
         interval = setInterval(function() {
             if (currentStatus === LOADING_STATUS) {
