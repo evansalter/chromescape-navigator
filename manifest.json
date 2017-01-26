@@ -1,0 +1,17 @@
+{
+    "manifest_version": 2,
+
+    "name": "Chromescape Navigator",
+    "description": "Show the Netscape Navigator loading animation",
+    "version": "1.0",
+
+    "browser_action": {
+        "default_icon": "icon-frames/frame_0.png"
+    },
+    "background": {
+        "scripts": ["script.js"]
+    },
+    "permissions": [
+        "activeTab"
+    ]
+}
