@@ -7,7 +7,7 @@ loadSelection();
 document.getElementById('iconForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    var selection = select.options[select.selectedIndex].id;
+    var selection = select.options[select.selectedIndex].value;
 
     if (selection) {
         saveSelection(selection);
@@ -19,15 +19,15 @@ document.getElementById('iconForm').addEventListener('submit', function(e) {
 function loadSelection() {
     chrome.storage.sync.get(SELECTED_ICON_KEY, function(selection) {
         if (selection) {
-            console.log(selection[SELECTED_ICON_KEY]);
-            select.value = "nn";
-            // select.value = selection[SELECTED_ICON_KEY];
+            select.value = selection[SELECTED_ICON_KEY];
         }
     });
 }
 
 function saveSelection(selection) {
-    chrome.storage.sync.set({SELECTED_ICON_KEY: selection}, function() {
+    var obj = {};
+    obj[SELECTED_ICON_KEY] = selection;
+    chrome.storage.sync.set(obj, function() {
         alert('Saved!')
     });
 }

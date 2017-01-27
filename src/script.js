@@ -4,17 +4,18 @@ const CURRENT_TAB_QUERY = {
     active: true,
     currentWindow: true
 }
-const FRAME_RATE = 130;
 const SELECTED_ICON_KEY = 'selectedIcon';
 const DEFAULT_ICON = 'nn';
 const ICON_CONFIG = {
     nn: {
         directoryName: 'netscape',
-        totalFrames: 34
+        totalFrames: 34,
+        frameRate: 130
     },
     ie: {
         directoryName: 'explorer',
-        totalFrames: 34
+        totalFrames: 34,
+        frameRate: 150
     }
 }
 
@@ -31,6 +32,15 @@ chrome.storage.sync.get(SELECTED_ICON_KEY, function(selection) {
         selectedIcon = selection[SELECTED_ICON_KEY];
     } else {
         selectedIcon = DEFAULT_ICON;
+    }
+});
+
+chrome.storage.onChanged.addListener(function (changes, areaName) {
+    if (areaName !== 'sync') {
+        return;
+    }
+    if (changes.hasOwnProperty(SELECTED_ICON_KEY)) {
+        setIcon(changes[SELECTED_ICON_KEY].newValue);
     }
 });
 
@@ -96,7 +106,7 @@ function startLoading() {
                 clearInterval(interval);
                 interval = undefined;
             }
-        }, FRAME_RATE);
+        }, config.frameRate);
     }
 }
 
