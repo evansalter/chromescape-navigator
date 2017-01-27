@@ -16,7 +16,9 @@
     "background": {
         "scripts": ["script.js"]
     },
+    "options_page": "options/options.html",
     "permissions": [
-        "activeTab"
+        "activeTab",
+        "storage"
     ]
 }
