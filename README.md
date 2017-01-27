@@ -4,7 +4,8 @@
 
 ## What
 
-Chrome extension that plays the Netscape Navigator when loading a page
+Chrome extension that shows the Netscape Navigator or Internet Explorer loading icon
+when loading a page.
 
 ## Why
 
@@ -13,3 +14,5 @@ Nostalgia, I guess ¯\\\_(ツ)_/¯
 ## How
 
 [![](https://developer.chrome.com/webstore/images/ChromeWebStore_Badge_v2_206x58.png)](https://chrome.google.com/webstore/detail/chromescape-navigator/ocjjknbofcggmblgmlpfpmhccojaecnp)
+
+To choose which loading icon to use, right click on the extension after installing and choose "options"

@@ -2,8 +2,8 @@
     "manifest_version": 2,
 
     "name": "Chromescape Navigator",
-    "description": "Show the Netscape Navigator loading animation",
-    "version": "1.0.0",
+    "description": "Show the Netscape Navigator or Internet Explorer loading animation in Chrome",
+    "version": "1.1.0",
 
     "icons": {
         "16": "logo/logo16.png",
