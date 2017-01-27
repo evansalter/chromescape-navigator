@@ -14,7 +14,7 @@ const ICON_CONFIG = {
     },
     ie: {
         directoryName: 'explorer',
-        totalFrames: 34,
+        totalFrames: 43,
         frameRate: 150
     }
 }
