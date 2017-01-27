@@ -1,4 +1,5 @@
 const SELECTED_ICON_KEY = 'selectedIcon';
+const DEFAULT_SELECTION = 'nn';
 
 var select = document.getElementById('selectedIcon');
 
@@ -20,6 +21,8 @@ function loadSelection() {
     chrome.storage.sync.get(SELECTED_ICON_KEY, function(selection) {
         if (selection) {
             select.value = selection[SELECTED_ICON_KEY];
+        } else {
+            select.value = DEFAULT_SELECTION;
         }
     });
 }
