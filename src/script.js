@@ -1,17 +1,38 @@
 const LOADING_STATUS = 'loading';
 const COMPLETE_STATUS = 'complete';
-const TOTAL_FRAMES = 34;
 const CURRENT_TAB_QUERY = {
     active: true,
     currentWindow: true
 }
 const FRAME_RATE = 130;
+const SELECTED_ICON_KEY = 'selectedIcon';
+const DEFAULT_ICON = 'nn';
+const ICON_CONFIG = {
+    nn: {
+        directoryName: 'netscape',
+        totalFrames: 34
+    },
+    ie: {
+        directoryName: 'explorer',
+        totalFrames: 34
+    }
+}
 
 var currentStatus = '';
 var currentFrame = 0;
 var currentTabs = {}
 var tabStatuses = {}
 var interval;
+
+var selectedIcon = '';
+
+chrome.storage.sync.get(SELECTED_ICON_KEY, function(selection) {
+    if (selection[SELECTED_ICON_KEY]) {
+        selectedIcon = selection[SELECTED_ICON_KEY];
+    } else {
+        selectedIcon = DEFAULT_ICON;
+    }
+});
 
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
     var status = changeInfo.status;
@@ -64,10 +85,11 @@ function updateAppStatus(status) {
 
 function startLoading() {
     currentStatus = LOADING_STATUS;
+    var config = ICON_CONFIG[selectedIcon];
     if (!interval) {
         interval = setInterval(function() {
             if (currentStatus === LOADING_STATUS) {
-                var newFrame = (currentFrame + 1) % TOTAL_FRAMES;
+                var newFrame = (currentFrame + 1) % config.totalFrames;
                 setIconImage(newFrame);
                 currentFrame = newFrame;
             } else {
@@ -84,7 +106,13 @@ function stopLoading() {
     setIconImage(0);
 }
 
+function setIcon(icon) {
+    selectedIcon = icon;
+    setIconImage(0);
+}
+
 function setIconImage(frame) {
-    var path = 'icon-frames/frame_' + frame + '.png';
+    var config = ICON_CONFIG[selectedIcon];
+    var path = 'icon-frames/' + config.directoryName + '/frame_' + frame + '.png';
     chrome.browserAction.setIcon({ path: path });
 }

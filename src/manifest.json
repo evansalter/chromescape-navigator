@@ -11,7 +11,7 @@
         "128": "logo/logo128.png"
     },
     "browser_action": {
-        "default_icon": "icon-frames/frame_0.png"
+        "default_icon": "logo/logo16.png"
     },
     "background": {
         "scripts": ["script.js"]
