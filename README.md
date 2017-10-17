@@ -4,7 +4,7 @@
 
 ## What
 
-Chrome extension that shows the Netscape Navigator or Internet Explorer loading icon
+An extension for [Chrome](https://chrome.google.com/webstore/detail/chromescape-navigator/ocjjknbofcggmblgmlpfpmhccojaecnp) and [Firefox](https://addons.mozilla.org/en-US/firefox/addon/firescape_navigator/) that shows the Netscape Navigator or Internet Explorer loading icon
 when loading a page.
 
 ## Why
@@ -14,5 +14,6 @@ Nostalgia, I guess ¯\\\_(ツ)_/¯
 ## How
 
 [![](https://developer.chrome.com/webstore/images/ChromeWebStore_Badge_v2_206x58.png)](https://chrome.google.com/webstore/detail/chromescape-navigator/ocjjknbofcggmblgmlpfpmhccojaecnp)
+[![](https://addons.cdn.mozilla.net/static/img/addons-buttons/AMO-button_1.png)](https://addons.mozilla.org/en-US/firefox/addon/firescape_navigator/?src=userprofile)
 
 To choose which loading icon to use, right click on the extension after installing and choose "options"
