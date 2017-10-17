@@ -25,7 +25,7 @@ var currentTabs = {}
 var tabStatuses = {}
 var interval;
 
-var selectedIcon = '';
+var selectedIcon = DEFAULT_ICON;
 
 chrome.storage.sync.get(SELECTED_ICON_KEY, function(selection) {
     if (selection[SELECTED_ICON_KEY]) {

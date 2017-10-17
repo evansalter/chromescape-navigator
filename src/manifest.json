@@ -3,7 +3,7 @@
 
     "name": "Chromescape Navigator",
     "description": "Show the Netscape Navigator or Internet Explorer loading animation in Chrome",
-    "version": "1.1.0",
+    "version": "1.2.0",
 
     "icons": {
         "16": "logo/logo16.png",
@@ -16,7 +16,9 @@
     "background": {
         "scripts": ["script.js"]
     },
-    "options_page": "options/options.html",
+    "options_ui": {
+        "page": "options/options.html"
+    },
     "permissions": [
         "activeTab",
         "storage"
